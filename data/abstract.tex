@@ -1,160 +1,142 @@
 \begin{cabstract}
-  随着晶体管集成和存储器技术的发展以及对计算性能需求的增长，
+  随着晶体管集成技术和存储器技术的发展，应用程序对计算能力需求的增长，
   高性能计算机系统的计算结点规模持续增大。
-  高性能计算机系统的互连网络系统对整个系统的
-  成本开销、吞吐率、能耗、容错以及物理部署复杂度具有重大影响。
-  大规模低直径拓扑结构是高性能互连网络一种高效的、低延迟的解决方案，
+  高性能计算机系统的互连网络子系统对系统整体的
+  成本开销、吞吐率、能耗、容错以及物理部署复杂度都具有重大影响。
+  大规模低直径拓扑结构是一种高效、低延迟的高性能互连网络解决方案，
   也是高性能互连网络的发展趋势。
-  随着规模扩展的需求不断增加，
-  给大规模低直径高性能互连网络拓扑结构
+  不断增长的规模扩展需求，
+  给大规模低直径拓扑结构
   设计带来了巨大挑战。物理器件的发展无法满足规模扩展的需求，
   缓存资源不能满足路由算法的需求，
   物理封装的复杂度不断增加，成本和能耗开销不断上升等问题已成为
-  高性能互连网络发展制约的重要因素。
-  本文针对当前新型高性能互连网络在物理器件约束下如何满足E级计算系统网络规模的
-  灵活性以及物理布局布线的复杂度，
+  制约高性能互连网络发展的重要因素。
+  本文针对网络拓扑结构如何在当前物理器件约束下应对E级计算系统网络规模需求
+  与物理布局布线的复杂度，
   路由算法如何解决缓存资源利用率低等问题，
-  分别对灵活的、布线容易的高性能互连网络新型拓扑结构以及
-  高效利用缓存资源的路由算法等挑战性问题进行深入的研究，本文的工作主要包括：
+  分别对规模灵活、易于布线的网络拓扑结构设计以及
+  可高效利用缓存资源的路由算法设计等挑战性问题进行深入研究。本文的工作主要包括：
 
   （1）针对在E级计算的挑战下，
-  因路由器端口数约束使当前高性能互连网络的灵活性及网络性能方面的不足，
-  提出一种灵活端口数的高性能互连网络新型拓扑结构Galaxyfly。
-  Galaxyfly利用代数图论有限域的方法构造而成。
-  在保持低直径的情况下，Galaxyfly可以达到网络规模和二分带宽的灵活权衡。
+  因路由器端口数约束造成当前网络拓扑结构规模受限、灵活性低、网络性能不足等问题，
+  提出一种高性能互连网络新型拓扑结构Galaxyfly。
+  Galaxyfly基于代数图论有限域的方法构建，
   其降低了对高阶路由器端口数的要求，
-  可以使用较少的端口数去构建E级计算系统的网络规模。
-  针对Galaxyfly结构，不仅分析了可构造的配置并且评估了最短路径数量。
-  利用其代数图论的性质，设计了拥塞敏感的路由算法。
-  与其他新型高性能互连网络拓扑结构分别从
-  性能、成本和能耗三方面进行了实际物理布局的模拟和分析比较。
-  结果表明Galaxyfly相比其他结构，
-  在不同的路由算法以及典型的通信模式下，
+  可以使用较少的端口数满足E级计算系统的规模需求，
+  在保持低直径的情况下，Galaxyfly可以达到网络规模与二分带宽的灵活折中。
+  %针对Galaxyfly结构，分析了可构造的配置并且评估了最短路径数量。
+  利用其代数图论的性质，设计了用于Galaxyfly的拥塞敏感的路由算法。
+  分别从性能、成本和能耗三方面与其他新型高性能互连网络拓扑结构
+  进行了实际物理布局的模拟和分析比较，
+  结果表明，相比其他拓扑结构，Galaxyfly在不同的路由算法以及典型的通信模式下，
   能够展现更优的性能，是一个适合构建E级计算系统的新型高性能互连网络拓扑结构。
 
   （2）针对在E级计算的挑战下，
-  目前高性能互连网络的网络性能、可维护性以及物理封装方面的不足，
+  当前高性能互连网络的网络性能、可维护性以及物理封装等方面的不足，
   提出一种适合使用多芯光纤的高性能互连网络新型拓扑结构Bundlefly。
-  Bundlefly是一个低直径、可灵活扩展并且适合采用多芯光纤连接机柜之间的拓扑结构。
+  Bundlefly是一个低直径、可灵活扩展并且适合采用多芯光纤作为机柜间连线的拓扑结构。
   随着集成光模块板的发展，一根多芯光纤可以替代一捆传统的单芯光纤，
   不仅可以降低光纤的使用成本还可以提高光纤的可维护性。
-  虽然Bundlefly的网络直径只有3，
-  但是其不仅能够充分利用多芯光纤来提高机柜间的通信带宽
-  还能降低高阶路由器的端口数的要求来支持E级系统的可扩展性。
-  通过分析和模拟，比较了Bundlefly和其他新型高性能互连网络拓扑结构，
-  Bundlefly能够完成更好的性能。
+  在保证网络直径只有3的前提下，
+  Bundlefly不仅能够充分利用多芯光纤来提高机柜间的通信带宽,
+  还能降低对高阶路由器的端口数要求以支持E级系统的规模。
+  分析和模拟的结果表明，与其他新型高性能互连网络拓扑结构相比，
+  Bundlefly表现出更优的性能。
 
-  （3）针对目前高性能互连网络自适应路由算法对虚拟通道数量要求高以及
-  缓存资源利用均衡的不足，
+  （3）针对目前高性能互连网络自适应路由算法对虚拟通道数量要求过高以及
+  缓存资源利用不均衡的问题，
   提出了一种标签路由算法Label-based Routing(LBR)。
-  LBR通过协同设计路由器微体系结构里的输入缓冲区模块和路由计算模块，
+  LBR通过协同设计路由器微体系结构中的输入缓冲区模块和路由计算模块，
   将路由计算引入缓冲区模块，根据网络状态对路由报文做标记。
-  LBR不仅降低了死锁避免政策对虚拟通道的需求，
-  还均衡使用缓存资源并有效实现完全自适应路由。
-  通过模拟在Dragonfly结构上评估了LBR的性能并与其他拓扑结构进行了对比。
-  实验表明，在大部分通信模式下，LBR优于别的路由算法近10\%-35\%。
+  有效实现完全自适应路由的前提下，LBR不仅降低了死锁避免对虚拟通道数的需求，
+  还使缓存资源利用更加均衡。
+  通过在Dragonfly上模拟不同的路由算法，在大部分通信模式下，
+  LBR的性能超出其他路由算法约10\%-35\%。
+
 
 
 \end{cabstract}
 \ckeywords{高性能互连网络; 高阶路由器; 多芯光纤；路由算法}
 
 \begin{eabstract}
-  With the development of high-performance computing (HPC) systems,
-  various applications and the enhancing requirement of computing workloads,
-  it is important for high-performance interconnection network
-  to provide effective communication.
-  Large-scale low-diameter topologies is an key
-  solution and is also the trend of high-performance interconnection network.
-  With the increasing demand of network scalability,
-  there is a challenge to design a large-scale low-diameter
-  interconnection network topology. The restriction of chip physical
-  resources and state-of-the-art integration technology,
-  the increasing complexity of physical layout,
-  and the cost and power consumption are all the important factors
-  for the design of large-scale low-diameter interconnection network.
-  The dissertation focuses on the problems of the scalability
-  of current interconnection networks with the restriction of
-  COTS routers, the cable packaging complexity,
-  and low utilization of buffer resources by routing algorithms,
-  the main work of this dissertation includes:
+  With the emergence of more and more applications
+  and the explosion of application data,
+  the scale of high-performance computing (HPC) systems is increasing rapidly
+  to provide sufficient computing capabilities.
+  Being one of the most important sub-system in HPC systems,
+  interconnection network has a great impact on the overall performance,
+  cost of ownership, power consumption, resiliency and physical layout.
+  Large-scale low-diameter topology is a key solution to high-performance networks,
+  and has become the trend in interconnection network designing.
+  The growing demand for network scalability brings
+  big challenges to the design of large-scale low-diameter
+  interconnection network topologies due to several limiting factors,
+  including the contention of chip physical resources,
+  the limitation of the state-of-the-art integration technology,
+  the complexity of physical layout, and the cost and power budget.
+  
+  The dissertation focuses on designing network topologies
+  which meet the scalability requirement of exascale HPC systems
+  with commertial-on-the-shelf (COTS) routers
+  and designing routing algorithms which aim at improving
+  the utilization of buffer resources in routers.
+  The problem of cable packaging complexity is also addressed.
+  The main contributions are:
 
-  (1) Interconnection networks play an essential role
-  in the architecture of large-scale HPC systems.
-  In this paper, a novel family of low-diameter topologies is constructed,
-  namely Galaxyfly, using techniques of algebraic graphs over finite fields.
+  (1) 
+  We propose Galaxyfly, a novel family of low-diameter topologies,
+  based on techniques of algebraic graphs over finite fields.
+  Galaxyfly lowers the demands for high-radix routers
+  and is able to build exascale networks with routers of moderate radix. 
   Galaxyfly is guaranteed to retain a small constant diameter
   while achieving a flexible tradeoff between network scale
   and bisection bandwidth.
-  Galaxyfly lowers the demands for high-radix routers
-  and is able to utilize routers with moderate radix to build
-  exascale interconnection networks.
-  We analyze the achievable configuration of Galaxyfly
-  and evaluate the property of multiple
-  shortest paths for load balance.
+  An congestion sensitive routing algorithm is also designed for Galaxyfly.
+  %% We analyze the achievable configuration of Galaxyfly
+  %% and evaluate the property of multiple
+  %% shortest paths for load balance.
   We conduct extensive simulations and
   analysis to evaluate the performance, cost,
-  and power consumption of Galaxyfly on physical layout
-  against state-of-the-art topologies.
-  The results show that our design achieves better
-  performance than most existing topologies
-  under various routing algorithms and typical traffic patterns,
-  and is cost-effective to deploy for exascale HPC systems.
+  and power consumption of Galaxyfly and compare Galaxyfly
+  against other state-of-the-art topologies.
+  The results show that Galaxyfly achieves better performance
+  than existing topologies with various routing algorithms under typical traffic patterns,
+  and is capable and cost-effective to build exascale HPC systems.
 
-  (2) The race to exascale just exacerbated this trend.
-  The resulting longer average distance between cabinets
-  makes the use of optical fiber mandatory.
-  With the development of board-mounted optical assemblies,
-  it can increase the number of optical fibers for the
-  requirement of larger size and higher bandwidth with lower
-  power consumption and higher signal integrity.
-  However, the system meets the challenge of cable packaging complexity,
-  cable tolerance and cable maintainability.
-  Multicore fiber (MCF) is a new and cost-effective
-  approach that has the potential to replace a bundle of fiber
-  cables between cabinets with a single cable,
-  thus lowering the complexity and enhancing the maintainability.
-  To the best of our knowledge,
-  we are the first to formally study the problem of building
-  a cost-effective HPC network topology using MCF.
-  In this paper, a new diameter-3 topology is proposed, namely Bundlefly.
-  Bundlefly achieves a flexible tradeoff between intra-cabinet
-  radixes and inter-cabinet radixes of routers
-  with merely moderate radix to build diameter-3
-  exascale interconnection network and is suitable to
-  the use of MCF for the requirement of inter-cabinet bandwidth.
-  We analyze the properties of Bundlefly and
-  present effective routing algorithms.
-  We simulate and analyze the performance of Bundlefly against
-  state-of-the-art topologies.
-  The results show that Bundlefly with flexible configurations
+  (2)
+  Optical fibers are mandatory in connecting cabinets in modern HPC systems.
+  As the number of the inter-cabinet optical fibers grows,
+  the system is meeting more challenges in cable packaging, cable tolerance
+  and cable maintainability.
+  Multicore fiber (MCF) is a cost-effective
+  approach which is potential to replace a bundle of fiber
+  cables between cabinets with a single one,
+  thus lowering the packaging complexity and enhancing the maintainability.
+  We propose Bundlefly, a new topology
+  which utilizes MCFs to construct interconnection networks in a cost-effective way.
+  Bundlefly achieves a flexible tradeoff between
+  intra-cabinet and inter-cabinet router radix,
+  and is capable to build exascale networks of diameter 3.
+  Evaluation results show that Bundlefly with flexible configurations
   can achieve better performance than most existing topologies.
+  %% To the best of our knowledge,
+  %% we are the first to formally study the problem of building
+  %% a cost-effective HPC network topology using MCF.
 
   (3) Cost-effective adaptive routing has a significant
-  impact on overall performance for high-radix hierarchical topologies,
-  such as Dragonfly, which achieve a lower network diameter
-  than traditional topologies, Torus and Fat tree,
-  but exhibit a lower degree of adaptiveness for shortest-path routing.
-  Existing adaptive routing methods for those hierarchical
-  topologies improve the adaptiveness by increasing path length,
-  i.e. local or global adaptive routing, and thus suffer from
-  complex and costly deadlock avoidance.
-  This work aims to maximize the routing adaptiveness at
-  the minimum cost of deadlock avoidance.
-  We propose a label routing method for high-radix hierarchical networks.
-  This label routing utilizes a co-design methodology
-  and coordinates the two pipelines,
-  input queue and routing computation, in the router microarchitecture.
-  Packets in the input buffer are labeled by our routing
-  algorithm depending on network states.
-  We reorganize the input buffer and develop a label routing algorithm,
-  named Label-based Routing, LBR.
-  LBR relaxes the requirement of using virtual channels
-  to eliminate routing deadlock,
-  and mitigates buffer resources dedicated to deadlock avoidance.
-  LBR manages the buffer resources and balance its utilization elaborately,
-  and achieve fully adaptive routing efficiently.
+  impact on overall performance for high-radix hierarchical topologies such as Dragonfly.
+  Existing adaptive routing methods for high-radix hierarchical
+  topologies have the drawback that they cost too many virtual channels
+  and utilize buffer resources in an imbalanced way.
+  We propose a label-based routing (LBR) method for high-radix hierarchical networks.
+  LBR utilizes a co-design methodology which coordinates
+  the input queue and routing computation pipelines in routers.
+  While LBR achieves fully adaptive routing,
+  it relaxes the requirement of virtual channels to eliminate routing deadlock,
+  and eliminate buffer resources dedicated to deadlock avoidance,
+  thus improving the efficiency of buffer utilization.
   We conduct extensive experiments to evaluate the performance
-  of LBR on Dragonfly and compare it with state-of-the-art works.
+  of LBR on Dragonfly and compare it with other state-of-the-art routing algorithms.
   The results show that LBR achieves 10\%–35\% higher
   performance than existing routing algorithms under most
   traffic patterns.
