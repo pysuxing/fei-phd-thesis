@@ -1,4 +1,7 @@
-once:
+SOURCES = thesis.tex data/abstract.tex data/chap01.tex data/chap02.tex data/chap03.tex \
+          data/chap04.tex data/chap05.tex data/chap06.tex data/ack.tex data/denotation.tex
+
+thesis.pdf: $(SOURCES)
 	xelatex thesis
 
 pdf:
