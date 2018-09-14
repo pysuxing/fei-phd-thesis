@@ -44,10 +44,10 @@
 % \documentclass[master,otf,anon]{nudtpaper}
 %
 %\documentclass[master,otf]{nudtpaper}
-\documentclass[doctor,twoside,otf,draft]{nudtpaper}
+\documentclass[doctor,twoside,otf]{nudtpaper}
 \usepackage{mynudt}
 \usepackage{url}
-
+\usepackage{booktabs}
 
 
 
@@ -94,7 +94,7 @@
 % 加入makenomenclature命令可用nomencl制作符号列表。
 
 \begin{document}
-\graphicspath{{figures/}}
+\graphicspath{{figures/},{code/}}
 % 制作封面，生成目录，插入摘要，插入符号列表 \\
 % 默认符号列表使用denotation.tex，如果要使用nomencl \\
 % 需要注释掉denotation，并取消下面两个命令的注释。 \\
